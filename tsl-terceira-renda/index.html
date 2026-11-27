@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terceira Renda | Bruna Morais</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">
+
+<!-- ============================================================
+     CONFIGURAÇÃO (só mexer aqui)
+     SUPABASE_URL / SUPABASE_KEY / SUPABASE_TABLE
+       Enquanto SUPABASE_URL estiver vazio, o formulário funciona em
+       modo demonstração (mostra a mensagem de sucesso e guarda o
+       cadastro no navegador). Preenchendo os 3 campos, ele passa a
+       gravar de verdade na tabela do Supabase.
+     WHATSAPP_SUPORTE  número com DDI e DDD, só dígitos (opcional).
+       Se preencher, aparece um botão "Falar no WhatsApp agora" depois
+       do cadastro.
+     ============================================================ -->
+<script>
+window.TSL = {
+  SUPABASE_URL: "",            // ex: https://xxxxxxxx.supabase.co
+  SUPABASE_KEY: "",            // chave anon (public)
+  SUPABASE_TABLE: "leads_terceira_renda",
+  WHATSAPP_SUPORTE: ""         // ex: 5548999999999
+};
+</script>
+
+<!-- Meta Pixel Code (troque SEU_PIXEL_ID pelo ID do pixel, nos 2 lugares abaixo) -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'SEU_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=SEU_PIXEL_ID&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--c:#25F4EE;--p:#FE2C55;--bg:#000;--card:#08080c;--line:#ffffff14;--tx:#e6e6ea;--mut:#a3a3ad}
+html{background:#000;scroll-behavior:smooth}
+body{background:#000;color:var(--tx);font-family:'Open Sans',Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;font-size:18px;line-height:1.7}
+main{max-width:720px;margin:0 auto;padding:0 20px 40px}
+p{margin:0 0 1.15em}
+b,strong{color:#fff;font-weight:800}
+.hl{color:var(--p);font-weight:800}
+.hc{color:var(--c);font-weight:800}
+u{text-decoration-thickness:2px;text-underline-offset:4px;text-decoration-color:var(--c)}
+s{text-decoration-color:var(--p);text-decoration-thickness:2px;opacity:.8}
+.big-line{font-size:22px;line-height:1.45;color:#fff;font-weight:800}
+
+/* topo */
+.top{padding:44px 0 10px;text-align:center}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:7px 14px;border-radius:999px;background:#0b0b10;box-shadow:inset 0 0 0 1px #25F4EE40,-6px 0 18px #25F4EE1f,6px 0 18px #FE2C551f}
+.kicker i{width:8px;height:8px;border-radius:50%;background:var(--p);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 #FE2C5599}70%{box-shadow:0 0 0 9px #FE2C5500}100%{box-shadow:0 0 0 0 #FE2C5500}}
+h1{margin:22px auto 0;max-width:680px;font-size:clamp(28px,6.2vw,44px);line-height:1.18;font-weight:800;color:#fff;letter-spacing:-.01em;text-wrap:balance}
+h1 .hl{color:var(--p);text-shadow:-2px 0 #25F4EE66}
+.sub{margin:18px auto 0;max-width:600px;font-size:19px;color:#cfcfd6;text-wrap:balance}
+.byline{display:flex;align-items:center;justify-content:center;gap:12px;margin:26px 0 8px}
+.byline img{width:52px;height:52px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px #000,0 0 0 4px var(--p),-4px 0 14px #25F4EE66}
+.byline div{text-align:left;font-size:14px;line-height:1.35;color:var(--mut)}
+.byline b{display:block;font-size:15px}
+
+/* seções */
+section{padding:34px 0 6px}
+h2{font-size:clamp(24px,5vw,32px);line-height:1.25;color:#fff;font-weight:800;margin:0 0 20px;text-wrap:balance}
+h2 .hl{text-shadow:-2px 0 #25F4EE55}
+.tag{display:inline-block;font-family:Oswald,Arial,sans-serif;font-weight:500;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--c);margin-bottom:10px}
+hr.sep{border:0;height:1px;margin:30px 0 0;background:linear-gradient(90deg,transparent,#25F4EE55,#FE2C5555,transparent)}
+
+/* caixas */
+.box{background:var(--card);border-radius:16px;padding:22px 22px 8px;margin:8px 0 22px;box-shadow:0 0 0 1px #25F4EE33,-10px 0 30px #25F4EE14,10px 0 30px #FE2C5514}
+.box h3{font-size:19px;color:#fff;margin-bottom:10px;font-weight:800}
+.quote{border-left:3px solid var(--p);padding:4px 0 4px 18px;margin:6px 0 24px;font-size:21px;line-height:1.5;color:#fff;font-weight:700;font-style:italic}
+.not{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:6px 0 24px}
+.not span{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;padding:11px 14px;border-radius:12px;background:#0b0b10;box-shadow:inset 0 0 0 1px #FE2C5533;color:#ddd}
+.not span:before{content:"✕";color:var(--p);font-weight:900}
+
+/* 3 rendas */
+.rendas{display:grid;gap:14px;margin:10px 0 26px}
+.renda{display:flex;gap:16px;align-items:flex-start;padding:18px;border-radius:16px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.renda .n{flex:0 0 54px;height:54px;border-radius:14px;display:grid;place-items:center;font-family:Oswald,Arial,sans-serif;font-weight:700;font-size:28px;color:#fff;background:#15151c}
+.renda h3{font-size:18px;color:#fff;margin-bottom:4px}
+.renda p{margin:0;font-size:16px;color:var(--mut)}
+.renda.on{box-shadow:0 0 0 1px #25F4EE66,-10px 0 30px #25F4EE22,10px 0 30px #FE2C5522}
+.renda.on .n{background:linear-gradient(135deg,var(--c),var(--p));text-shadow:0 1px 2px #0006}
+.renda.on p{color:#e6e6ea}
+
+/* passos */
+.steps{counter-reset:s;display:grid;gap:12px;margin:10px 0 26px}
+.step{position:relative;padding:16px 18px 16px 66px;border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:16px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-weight:900;color:#000;background:linear-gradient(135deg,var(--c),var(--p))}
+.step h3{font-size:17px;color:#fff;margin-bottom:2px}
+.step p{margin:0;font-size:15.5px;color:var(--mut)}
+
+/* faq */
+details{border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line);margin-bottom:10px}
+summary{cursor:pointer;list-style:none;padding:16px 48px 16px 18px;font-weight:800;color:#fff;font-size:17px;position:relative}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";position:absolute;right:18px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--c);font-weight:400}
+details[open] summary:after{content:"–";color:var(--p)}
+details p{padding:0 18px;font-size:16px;color:#cfcfd6}
+
+/* botão TikTok (rola até o formulário) */
+.cta-wrap{padding:22px 0 10px;display:flex;justify-content:center}
+.tk-btn{position:relative;padding:3px;display:block;width:100%;max-width:460px;border-radius:14px;overflow:hidden;text-decoration:none;box-shadow:-4px 0 14px #25F4EE88,4px 0 14px #FE2C5588;animation:tkp 1.6s ease-in-out infinite}
+.tk-btn:before{content:"";position:absolute;inset:-150%;background:conic-gradient(var(--c),var(--p),var(--c),var(--p),var(--c));animation:tks 3s linear infinite}
+.tk-in{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:#010101;border-radius:11px;padding:17px 10px;line-height:1;overflow:hidden}
+.tk-in:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,#ffffff2e,transparent);transform:skewX(-20deg);animation:tkh 2.8s ease-in-out infinite}
+.tk-tx{position:relative;z-index:2;color:#fff;font-size:clamp(16px,5vw,22px);font-weight:900;text-transform:uppercase;letter-spacing:.02em;text-align:center;line-height:1.15;text-shadow:0 1px 2px #000,-1px 0 #25F4EE8c,1px 0 #FE2C558c}
+.tk-sm{position:relative;z-index:2;font-size:13px;color:#cfd3dc;font-weight:600}
+button.tk-btn{border:0;background:none;cursor:pointer;font:inherit;margin:0 auto}
+button.tk-btn[disabled]{animation:none;opacity:.7;cursor:wait}
+@keyframes tks{to{transform:rotate(360deg)}}
+@keyframes tkp{50%{transform:scale(1.04)}}
+@keyframes tkh{0%{left:-60%}60%,to{left:130%}}
+
+/* oferta */
+.offer{border-radius:18px;background:var(--card);overflow:hidden;margin:10px 0 24px;box-shadow:0 0 0 1px #25F4EE40,-10px 0 30px #25F4EE26,10px 0 30px #FE2C5526}
+.offer h3{text-align:center;padding:16px;font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#fff;font-weight:900;border-bottom:1px solid var(--line);text-shadow:-1px 0 #25F4EE8c,1px 0 #FE2C558c}
+.items{list-style:none;padding:6px 20px}
+.items li{display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--line);font-size:16px;line-height:1.5}
+.items li:last-child{border-bottom:0}
+.items li svg{flex-shrink:0;margin-top:3px;filter:drop-shadow(0 0 6px #25F4EE66)}
+.items em{display:inline-block;font-style:normal;font-size:11px;font-weight:900;letter-spacing:.1em;color:#000;background:linear-gradient(135deg,var(--c),var(--p));padding:2px 8px;border-radius:6px;margin-right:6px;vertical-align:2px}
+.price{text-align:center;padding:22px 18px 24px;border-top:1px solid var(--line);background:radial-gradient(90% 80% at 20% 0%,#25F4EE1f,#0000 60%),radial-gradient(90% 80% at 80% 0%,#FE2C5526,#0000 60%)}
+.anchor{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 14px;font-size:15px;color:#8a8a94}
+.anchor s{opacity:1}
+.today{margin-top:12px;font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--p);text-shadow:0 0 12px #FE2C5580}
+.bigp{font-family:system-ui,Arial,sans-serif;font-weight:900;line-height:1;margin-top:8px;font-size:22px;color:#fff;text-shadow:-2px 0 #25F4EE,2px 0 #FE2C55}
+.bigp strong{font-size:64px;font-weight:900}
+.cash{margin-top:8px;font-size:16px;color:#cfcfd6}
+.cash b{color:var(--c)}
+.vagas{margin:16px auto 0;max-width:320px;font-size:13px;color:#cfd3dc;font-weight:700}
+.vbar{height:6px;border-radius:6px;background:#1d1d24;overflow:hidden;margin-top:6px}
+.vbar i{display:block;height:100%;width:93%;background:linear-gradient(90deg,var(--c),var(--p))}
+
+/* garantia */
+.guarantee{display:flex;gap:18px;align-items:center;padding:20px;border-radius:16px;background:var(--card);margin:6px 0 24px;box-shadow:0 0 0 1px #FE2C5540,-10px 0 30px #25F4EE1f,10px 0 30px #FE2C5526}
+.guarantee h3{font-size:19px;color:#fff;margin-bottom:4px;text-shadow:-1px 0 #25F4EE8c,1px 0 #FE2C558c}
+.guarantee p{margin:0;font-size:15.5px;color:#cfcfd6}
+.seal2{flex-shrink:0;width:136px;height:136px;font-family:system-ui,Arial,sans-serif;filter:drop-shadow(-4px 0 12px #25F4EE55) drop-shadow(4px 0 12px #FE2C5555);animation:sgp 2.4s ease-in-out infinite}
+.sg-spin{transform-origin:60px 60px;animation:tks 22s linear infinite}
+.sg-ring{transform-origin:60px 60px;animation:tks 16s linear infinite reverse}
+@keyframes sgp{50%{transform:scale(1.04)}}
+
+/* caminhos */
+.paths{display:grid;gap:12px;margin:10px 0 24px}
+.path{padding:16px 18px;border-radius:14px;background:var(--card);box-shadow:inset 0 0 0 1px var(--line)}
+.path h3{font-size:17px;color:#fff;margin-bottom:4px}
+.path p{margin:0;font-size:15.5px;color:var(--mut)}
+.path.go{box-shadow:0 0 0 1px #25F4EE66,-10px 0 30px #25F4EE22,10px 0 30px #FE2C5522}
+.path.go p{color:#e6e6ea}
+
+/* formulário */
+#form{scroll-margin-top:16px}
+.form-card{border-radius:20px;padding:26px 22px 22px;background:var(--card);box-shadow:0 0 0 1px #25F4EE55,-12px 0 36px #25F4EE26,12px 0 36px #FE2C5526}
+.form-card h2{text-align:center;margin-bottom:8px}
+.form-card .lead{text-align:center;font-size:16px;color:#cfcfd6;margin-bottom:20px}
+.field{margin-bottom:14px}
+.field label{display:block;font-size:14px;font-weight:800;color:#fff;margin-bottom:6px}
+.field input{width:100%;font:inherit;font-size:17px;color:#fff;background:#0f0f15;border:1px solid #2a2a33;border-radius:12px;padding:14px 14px;outline:none;transition:border-color .2s,box-shadow .2s}
+.field input::placeholder{color:#6b6b76}
+.field input:focus{border-color:var(--c);box-shadow:0 0 0 3px #25F4EE26}
+.field.err input{border-color:var(--p);box-shadow:0 0 0 3px #FE2C5526}
+.field .msg{display:none;font-size:13px;color:var(--p);margin-top:5px;font-weight:700}
+.field.err .msg{display:block}
+.pay-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pay-opts label{display:flex;flex-direction:column;align-items:center;gap:2px;cursor:pointer;padding:12px 8px;border-radius:12px;background:#0f0f15;border:1px solid #2a2a33;text-align:center;font-weight:800;color:#fff;font-size:15px;transition:.2s}
+.pay-opts label small{font-weight:600;color:var(--mut);font-size:13px}
+.pay-opts>div{position:relative}
+.pay-opts input{position:absolute;left:0;top:0;width:1px;height:1px;opacity:0;pointer-events:none}
+.pay-opts input:checked+label{border-color:var(--c);box-shadow:0 0 0 3px #25F4EE26,inset 0 0 0 1px var(--c)}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--mut);line-height:1.5;margin:6px 0 18px}
+.consent input{margin-top:3px;accent-color:var(--c);width:16px;height:16px;flex-shrink:0}
+.consent a{color:#cfd3dc}
+.secure{display:flex;justify-content:center;gap:6px;align-items:center;font-size:12px;color:var(--mut);margin-top:12px}
+.form-error{display:none;text-align:center;color:var(--p);font-weight:700;font-size:14px;margin-top:10px}
+
+.success{display:none;text-align:center;padding:8px 4px}
+.success .ok{width:84px;height:84px;margin:0 auto 16px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--c),var(--p));box-shadow:-6px 0 24px #25F4EE66,6px 0 24px #FE2C5566;animation:pop .5s cubic-bezier(.2,.9,.3,1.3)}
+@keyframes pop{0%{transform:scale(.3)}100%{transform:scale(1)}}
+.success h2{margin-bottom:12px}
+.success p{font-size:17px;color:#e6e6ea}
+.success .wa{display:inline-flex;align-items:center;gap:10px;margin-top:8px;padding:14px 22px;border-radius:12px;background:#25D366;color:#04120a;font-weight:900;text-decoration:none}
+.success .steps-mini{text-align:left;max-width:420px;margin:18px auto 0;display:grid;gap:10px}
+.success .steps-mini div{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;color:#e6e6ea;padding:12px 14px;border-radius:12px;background:#0f0f15}
+.success .steps-mini b{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:13px;color:#000;background:linear-gradient(135deg,var(--c),var(--p))}
+
+.ps{font-size:16.5px;color:#cfcfd6;margin-top:26px}
+.sign{margin-top:22px;font-family:Oswald,Arial,sans-serif;font-size:26px;color:#fff;letter-spacing:.02em}
+
+/* rodapé legal */
+.legal-footer{margin:44px auto 0;text-align:center;color:#929292;font-size:11px;line-height:1.7}
+.legal-footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px}
+.legal-footer a{color:#bdbdbd;text-decoration:underline;text-underline-offset:3px}
+.legal-footer p{margin:8px 0}
+#legal-dialog{box-sizing:border-box;width:min(92vw,620px);max-height:85vh;border:1px solid #ddd;border-radius:12px;padding:28px;background:#fff;color:#222;line-height:1.65;text-align:left;font-size:14px;margin:auto}
+#legal-dialog::backdrop{background:#000b}
+#legal-dialog h2{font-size:22px;margin:0 28px 18px 0;color:#222}
+#legal-dialog h3{font-size:16px;margin:18px 0 6px}
+#legal-dialog p{margin:8px 0}
+#legal-dialog a{color:#175bb5}
+.legal-close{position:absolute;top:8px;right:12px;border:0;background:transparent;color:#333;font-size:28px;cursor:pointer}
+
+@media(max-width:520px){
+  body{font-size:17px}
+  main{padding:0 16px 32px}
+  .top{padding-top:30px}
+  .big-line{font-size:20px}
+  .quote{font-size:19px}
+  .guarantee{flex-direction:column;text-align:center}
+  .bigp strong{font-size:54px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="tkgrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#25F4EE"/><stop offset="1" stop-color="#FE2C55"/></linearGradient>
+<symbol id="chk" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="url(#tkgrad)"/><path d="m7 12.5 3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</defs></svg>
+
+<main>
+
+<!-- ===================== TOPO ===================== -->
+<header class="top">
+  <span class="kicker"><i></i>Carta aberta da Bruna Morais</span>
+  <h1>A Primeira Renda Paga O Seu Tempo. A Segunda Paga O Seu <i>Cansaço</i>... A <span class="hl">Terceira Renda Te Paga</span> <u>Enquanto Você Dorme</u>.</h1>
+  <p class="sub">A estratégia americana que faz gente comum vender no TikTok Shop todo dia, sem aparecer, sem seguidor e sem gastar R$ 1 com anúncio.</p>
+  <div class="byline">
+    <img src="assets/img/bruna-perfil.jpg" alt="Bruna Morais">
+    <div><b>Bruna Morais</b>Top vendedora do TikTok Shop Brasil</div>
+  </div>
+</header>
+
+<!-- ===================== LEAD ===================== -->
+<section>
+  <p class="big-line">Enquanto você tá aí rolando a For You do TikTok, achando que tá só passando o tempo, tem gente usando exatamente esse mesmo tempo pra receber venda todo santo dia.</p>
+  <p>Gente mais comum que você. Gente com menos estudo que você, menos tempo livre que você e muito menos vontade que você.</p>
+  <p>A diferença não é o celular. O celular é o mesmo. <b>A diferença é que elas ligaram uma coisa dentro dele, e você não.</b></p>
+  <p>Eu me chamo Bruna. Eu já passei de <span class="hl">5 milhões de reais faturados dentro do TikTok Shop Brasil</span>, sou top vendedora da plataforma e tô no nível mais alto que ela dá pra quem vende lá dentro, que é afiliada águia.</p>
+  <p>Eu passei a vida inteira vendendo pra chegar até aqui, e não foi em um mês. O que eu vou te mostrar nessa carta é como uma pessoa comum, sem seguidor, sem experiência e sem aparecer, consegue aplicar uma estratégia americana e começar a vender no automático.</p>
+  <p class="quote">R$ 300, R$ 400, R$ 500 por dia, com 10 minutinhos do seu almoço, usando o celular que você já tem na mão agora.</p>
+  <p>Sabe aquele barulhinho de notificação que você silenciou porque só chegava <s>cobrança</s>? Ele volta a tocar. <b>Só que agora é venda.</b></p>
+  <p>Sem precisar falar com ninguém, sem aparecer em nada, sem investir um real em anúncio e sem esperar um ano pra fazer dar certo.</p>
+  <p>E quando eu falo em não aparecer, eu sei exatamente no que você pensou. Não foi na câmera. Foi na sua colega de trabalho vendo. Foi na sua cunhada printando e mandando no grupo da família. Foi no <i>"desde quando você virou blogueirinha?"</i></p>
+  <p>Eu vou voltar nesse ponto, porque é ele que decide se você começa ou não.</p>
+</section>
+
+<!-- ===================== O QUE NÃO É ===================== -->
+<section>
+  <span class="tag">Antes de tudo</span>
+  <h2>Isso aqui veio de fora, e ainda circula num <span class="hl">grupinho fechado</span> no Brasil</h2>
+  <p>Nem adianta procurar no Google ou no ChatGPT. Esse método nasceu nos Estados Unidos, no TikTok Shop americano, quando eu morava lá. No ano passado, enquanto eu aprendia isso, não tinha ninguém no Brasil falando sobre o assunto. Ninguém.</p>
+  <p>Os americanos já usavam essa estratégia pra vender no TikTok todo dia, sem aparecer, sem seguidor, sem gastar um real em anúncio. Eu trouxe pra cá, apliquei em cima de tudo que eu já sabia de venda, e foi assim que eu saí da porta de uma loja de motos pro lugar onde eu tô hoje.</p>
+  <p>E deixa eu te dizer logo o que isso <b>não</b> é.</p>
+  <div class="not">
+    <span>Agentezinho de ChatGPT</span>
+    <span>Promptzinho meia boca</span>
+    <span>Link no grupo da família</span>
+    <span>Aposta</span>
+    <span>Robô de Pix</span>
+    <span>App que paga pra ver vídeo</span>
+    <span>Dropshipping</span>
+    <span>Shopee ou Amazon</span>
+  </div>
+  <p>Aqui quem entrega o comprador pra marca é o vídeo. <b>Não é você.</b> É uma estratégia que trabalha por mim, que me dá vídeos que vendem, e que eu vou te entregar nessa página.</p>
+</section>
+
+<!-- ===================== O TETO ===================== -->
+<section>
+  <span class="tag">Uma coisa que sempre me incomodou</span>
+  <h2>Tem alguém que decide quanto você pode ganhar. <span class="hl">E essa pessoa não é você.</span></h2>
+  <p>É alguém acima de você. Alguém que decide o seu salário, se você merece um aumento, uma promoção e até onde você pode crescer dentro daquela empresa.</p>
+  <p>Eu vivi isso por muito tempo. Eu vendia mais, trabalhava mais, entregava mais... e no final ainda tinha alguém decidindo até onde eu podia ir.</p>
+  <p>Talvez você esteja vivendo isso agora. E pensa no absurdo disso. <b>A pessoa que coloca um teto na sua renda pode nem saber direito quem você é.</b></p>
+  <p>Então guarda um nome aí na sua cabeça. <span class="hc">Terceira Renda.</span> Lá na frente você vai entender por que essa estratégia se chama assim, e aí você não vai mais conseguir olhar pra sua vida do mesmo jeito.</p>
+</section>
+
+<!-- ===================== DE ONDE SAI O DINHEIRO ===================== -->
+<section>
+  <div class="box">
+    <h3>Antes, a pergunta que você já fez. De onde sai esse dinheiro?</h3>
+    <p>Existe uma marca com produto no estoque dela. Ela separa um pedaço do preço pra quem trouxer comprador. Alguém vê o seu vídeo e compra dentro da plataforma. A plataforma vê que o comprador veio de você e te repassa aquele pedaço.</p>
+    <p>Isso é comissão de venda, a coisa mais velha do comércio. <b>Você não compra estoque, não manda produto e não fala com cliente.</b></p>
+  </div>
+</section>
+
+<div class="cta-wrap"><a class="tk-btn js-goform" href="#form"><span class="tk-in"><span class="tk-tx">Quero minha vaga</span><span class="tk-sm">Leva menos de 1 minuto</span></span></a></div>
+
+<hr class="sep">
+
+<!-- ===================== HISTÓRIA ===================== -->
+<section>
+  <span class="tag">Deixa eu me apresentar de verdade</span>
+  <h2>Eu não vou te contar uma história triste. Eu vou te contar <span class="hl">de onde eu saí</span>.</h2>
+  <p>Não vou dizer que eu tava quebrada, que eu não tinha o que comer, nada dessas palhaçadas que falam por aí.</p>
+  <p>Eu sempre fui vendedora. Passei por consórcio, loja de móveis, loja de motos. E em praticamente todos os lugares por onde eu passei, eu vendia bem.</p>
+  <p>Só que tinha uma coisa que se repetia. <b>Toda vez que eu começava a crescer, alguma coisa me barrava.</b></p>
+  <p>Na loja de motos, eu fui a primeira mulher da equipe. Tive que provar desde o primeiro dia que conseguia vender tanto quanto qualquer homem dali. Ouvi do dono que eu <i>falava alto demais</i>.</p>
+  <p>Eu trabalhava sábado, domingo, à noite, atendia cliente fora do horário, ia até a casa das pessoas. Criei meu próprio Instagram, comecei a postar meus clientes e fui construindo uma carteira enorme.</p>
+  <p>Só que, quanto mais eu fazia, mais limite colocavam. Até que veio a pandemia e simplesmente bloquearam a nossa operação.</p>
+  <p class="quote">Foi ali que eu decidi que não queria mais depender de alguém apertando um botão e decidindo quanto eu podia ganhar.</p>
+  <p>Fui pro digital. Errei bastante, acertei algumas. Montei operação pelo WhatsApp, cheguei a ter equipe. Algumas coisas davam dinheiro. <b>Mas nenhuma me dava liberdade de verdade.</b> Pro negócio funcionar, eu precisava estar ali trabalhando.</p>
+  <p>Até que eu fui passar um tempo nos Estados Unidos e conheci o TikTok Shop. E ali uma coisa virou na minha cabeça.</p>
+  <p>Durante a vida inteira, o meu esforço sempre valeu uma vez. Eu vendia uma moto hoje e amanhã precisava começar tudo de novo. No TikTok Shop era diferente. <span class="hl">Um vídeo que eu fazia uma vez podia continuar vendendo amanhã, depois de amanhã e semanas depois.</span></p>
+  <p>Comecei a estudar aquilo, trouxe minha família pra testar comigo, depois alguns amigos, e as primeiras vendas começaram a sair.</p>
+  <p>Só que eu cometi outro erro. Comecei a fazer tudo na mão. Escolhia produto, pesquisava, criava roteiro, gravava, aparecia na câmera, postava, acompanhava equipe. O negócio cresceu, mas continuava dependendo completamente de mim.</p>
+</section>
+
+<section>
+  <span class="tag">O dia em que tudo mudou</span>
+  <h2>Meu irmão sofreu um acidente. Eu parei tudo por cinco meses... <span class="hl">e tudo parou junto comigo.</span></h2>
+  <p>Eu precisei voltar pro Brasil pra cuidar dele e da família. Durante meses, a minha vida virou hospital, casa, escola do meu sobrinho e problema de família. Eu simplesmente não conseguia trabalhar.</p>
+  <p>E foi ali que eu descobri o maior problema de tudo que eu tinha construído.</p>
+  <p class="quote">Eu podia ter faturamento, equipe, estratégia, resultado. Mas se tudo dependia de eu acordar e trabalhar todo dia, eu não tinha construído um negócio. Eu tinha construído outro emprego.</p>
+  <p>Quando consegui voltar, decidi reconstruir de outro jeito. Peguei o que eu tinha aprendido no mercado americano e comecei a aplicar no TikTok Shop do Brasil.</p>
+  <p>No primeiro mês a operação chegou perto dos <b>R$ 100 mil</b>. No segundo, saltou pra quase <b>meio milhão</b>. E dali em diante continuou crescendo, até passar dos <span class="hl">5 milhões de reais em vendas</span>.</p>
+  <p>Mas pra mim o mais importante não foram os cinco milhões. Foi entender o que eu não tinha entendido durante todos aqueles anos. <b>Eu nunca tive problema de trabalhar. O problema era que tudo que eu construía dependia de mim trabalhando de novo no dia seguinte.</b></p>
+  <p>Então eu montei uma estratégia em que o trabalho que eu faço hoje continua trabalhando por mim amanhã. E foi daí que nasceu a Terceira Renda.</p>
+</section>
+
+<!-- ===================== TERCEIRA RENDA ===================== -->
+<section>
+  <span class="tag">A ideia que mudou tudo</span>
+  <h2>Existem três rendas. <span class="hl">Quase todo mundo só conhece duas.</span></h2>
+  <div class="rendas">
+    <div class="renda"><div class="n">1</div><div><h3>A primeira renda é o seu salário</h3><p>Você vende uma parte do seu dia e recebe por isso.</p></div></div>
+    <div class="renda"><div class="n">2</div><div><h3>A segunda renda é o bico</h3><p>Uber, unha, hora extra, trabalhar no sábado. Parece uma renda diferente, mas você continua vendendo a mesma coisa. O seu tempo.</p></div></div>
+    <div class="renda on"><div class="n">3</div><div><h3>A terceira renda trabalha quando você não está</h3><p>Você faz o trabalho uma vez e alguma coisa continua trabalhando depois. Você cria um vídeo hoje e ele pode continuar vendendo enquanto você trabalha, enquanto você está com a sua família, <b>enquanto você dorme</b>.</p></div></div>
+  </div>
+  <p>Eu também vivi a segunda renda. A minha era ficar na porta daquela loja quando todo mundo já tinha ido embora. Só que chega um momento em que não existe mais hora pra vender.</p>
+  <p class="big-line">Na primeira renda, você trabalha pra ganhar. Na segunda, trabalha mais pra ganhar mais. <span class="hl">Na terceira, existe alguma coisa trabalhando quando você não está.</span></p>
+</section>
+
+<hr class="sep">
+
+<!-- ===================== MECANISMO ===================== -->
+<section>
+  <span class="tag">Como funciona</span>
+  <h2>O que faz o vídeo vender não é a ferramenta. <span class="hl">É o que você manda ela fazer.</span></h2>
+  <p>Quando você analisa centenas, milhares de vídeos que venderam muito, começa a perceber que eles repetem a mesma estrutura. O gancho dos primeiros segundos. O jeito que o produto aparece. O momento em que a pessoa entende por que precisa daquilo. E principalmente o que faz a plataforma decidir entregar um vídeo pra milhares de pessoas de graça.</p>
+  <p>Eu comprei curso em português, curso em espanhol, conteúdo de fora. Todo mundo ensinava o que fazer. Quase ninguém explicava por que funcionava. Então eu montei a minha própria metodologia com o que eu via no mercado americano.</p>
+  <p>Só que ainda existia um problema. <b>Volume.</b> Pra colocar muito vídeo no ar, eu precisava gravar muito. E foi aí que eu vi o que já acontecia lá fora. Quem fazia volume não aparecia. Usava inteligência artificial pra criar um avatar que apresenta o produto no lugar da pessoa.</p>
+  <p>Eu juntei as duas coisas. O padrão de vídeo que eu já sabia que vendia, com ferramentas que produzem esses vídeos sem depender da minha cara na câmera. E isso mudou completamente a escala.</p>
+  <p>A estratégia tem quatro partes, e cada uma faz o trabalho que antes exigia um profissional diferente.</p>
+  <div class="steps">
+    <div class="step"><h3>Achar o produto que já está vendendo</h3><p>Eu te entrego a lista dos produtos que mais vendem, pra você não perder tempo testando o que eu já sei que não anda.</p></div>
+    <div class="step"><h3>Ler o padrão do vídeo que fez ele vender</h3><p>O gancho, a ordem, o momento certo de mostrar o produto. O padrão vem pronto.</p></div>
+    <div class="step"><h3>Montar o roteiro em cima desse padrão</h3><p>Você não copia nada de ninguém. Monta um vídeo novo, seu, no formato que a plataforma entende como conteúdo.</p></div>
+    <div class="step"><h3>Gerar o vídeo com avatar e postar</h3><p>A ferramenta grava com um avatar, sem você aparecer em nada. Você só posta, e a estratégia te diz quantos vídeos por dia, em que horário e o que fazer quando um deles estoura.</p></div>
+  </div>
+  <p>É como ter contratado pesquisador, roteirista, editor e ator. Só que mais fácil, porque o padrão eu já entrego pronto.</p>
+  <p>E tem uma parte que quase ninguém entende. <b>A plataforma não quer propaganda no feed, ela quer que a pessoa fique lá dentro assistindo.</b> Quando o vídeo entretém, ela entrega de graça pra milhares de pessoas. Quando parece propaganda, ela enterra. Não é sorte, não é algoritmo mágico. É o interesse da própria plataforma.</p>
+</section>
+
+<!-- ===================== NÃO APARECER ===================== -->
+<section>
+  <span class="tag">Aquele ponto que eu prometi voltar</span>
+  <h2>Ninguém vai ver a sua cara. <span class="hl">Quem vende é um rosto que nem é o seu.</span></h2>
+  <p>O medo não é a câmera. O medo é a colega de trabalho vendo, é a cunhada printando e mandando no grupo da família, é a pergunta <i>"desde quando você virou blogueirinha?"</i>. Esse medo é o motivo número um de gente que quer, mas nunca começa.</p>
+  <p>E a estratégia resolve isso na prática, porque lá fora quase ninguém aparece. Quem aparece é um avatar. <b>Não é o seu rosto, não é a sua voz, não é o seu nome.</b> Você vende no silêncio, e o dinheiro cai do mesmo jeito. Se um dia você quiser aparecer, aí é escolha sua.</p>
+</section>
+
+<!-- ===================== PROVA ===================== -->
+<section>
+  <span class="tag">Não funciona só comigo</span>
+  <h2>Eu testei com a minha família antes de abrir pra <span class="hl">gente comum</span></h2>
+  <p>Eu não queria acreditar que aquilo funcionava só comigo. Chamei minha irmã, meu irmão e alguns amigos pra aplicar junto. Fomos testando cada parte. Produto, gancho, roteiro, vídeo, avatar, publicação. Até transformar tudo num processo que qualquer pessoa pudesse seguir. Hoje até o meu marido trabalha comigo nisso.</p>
+  <p>Quando eu abri pro primeiro grupo, foi pra gente comum mesmo. Gente do zero absoluto, sem experiência, sem produto, que nunca tinha vendido nada na internet, que nem queria aparecer em vídeo, que mal mexia no celular.</p>
+  <p>Tem aluno com mais de cinquenta anos, sem nenhuma experiência com tecnologia. Tem gente do mundo CLT, que mal usava o Instagram. E <b>mais de 700 pessoas já passaram pela minha primeira imersão.</b></p>
+  <p>Não precisa diploma, não precisa formação. Eu não tenho nenhuma. <span class="hl">Eu tenho porta de loja.</span></p>
+</section>
+
+<div class="cta-wrap"><a class="tk-btn js-goform" href="#form"><span class="tk-in"><span class="tk-tx">Quero ligar minha terceira renda</span><span class="tk-sm">Garanta uma das 100 vagas de hoje</span></span></a></div>
+
+<hr class="sep">
+
+<!-- ===================== POR QUE AGORA ===================== -->
+<section>
+  <span class="tag">Por que agora</span>
+  <h2>Eu não vou te falar de bitcoin. <span class="hl">Eu vou te falar de fila.</span></h2>
+  <p>Aqui no Brasil essa fila ainda não formou. E quem chega primeiro bebe água limpa. Daqui um tempo você vai estar disputando o mesmo produto com muito mais gente, e não vai ser mais tão fácil.</p>
+  <p>É por isso que a nossa comunidade tá vendendo tanto agora. Não é porque a gente é mais inteligente. <b>É porque a gente chegou antes.</b></p>
+  <p>E isso não é achismo meu. A empresa dona da plataforma anunciou investimento de 200 bilhões de reais no Brasil, com um data center no Ceará, ao longo de cerca de duas décadas. Ninguém investe esse tanto de dinheiro numa coisa que vai acabar ano que vem. O chão embaixo dos seus pés aqui é firme.</p>
+</section>
+
+<!-- ===================== OFERTA ===================== -->
+<section>
+  <span class="tag">O que você leva hoje</span>
+  <h2>Você vai ter acesso ao <span class="hl">meu cérebro em formato de aula</span></h2>
+  <p>Detalhe por detalhe. Que produto pegar, que gancho usar, qual ferramenta usar e como usar, quantos vídeos por dia, como ler o painel, o que fazer quando um vídeo estoura. Tudo liberado 24 horas por dia, no seu ritmo e no seu horário, porque eu sei que o seu tempo é o que sobra do dia, e não o contrário.</p>
+
+  <div class="offer">
+    <h3>Tudo o que você recebe</h3>
+    <ul class="items">
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><b>A Estratégia Americana completa</b>, com as ferramentas de inteligência artificial que acham os vídeos que já venderam milhões, leem o padrão e montam o seu vídeo com avatar, sem você aparecer</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><b>O método da Bruna completo em aulas gravadas</b>, pra assistir quando quiser</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><b>Os meus modelos prontos</b>, pra você aplicar ainda hoje</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><em>BÔNUS 1</em><b>A minha lista de produtos</b>, os que mais vendem hoje dentro da plataforma, que eu já testei e sei que andam. E junto com a lista, o padrão de vídeo de cada um</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><em>BÔNUS 2</em><b>As 2 estratégias de venda rápida</b>, os 2 atalhos que eu uso quando quero venda nas próximas 72 horas e que eu nunca tinha entregado fora da minha mentoria</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><em>BÔNUS 3</em><b>Acompanhamento do meu time</b>. Se você tiver aplicando às 3 da manhã porque foi o único horário que sobrou, tem quem te responda. Até te ligar, se for preciso</span></li>
+      <li><svg width="22" height="22"><use href="#chk"/></svg><span><em>SURPRESA</em><b>Um presente</b> esperando por você lá dentro, que quem pega diz que sozinho vale mais de 2 mil reais</span></li>
+    </ul>
+    <div class="price">
+      <div class="anchor"><s>R$ 5.000</s><s>R$ 2.500</s><s>R$ 1.000</s></div>
+      <div class="today">Só hoje e só nesta página</div>
+      <div class="bigp">12x de <strong>R$&nbsp;29</strong></div>
+      <div class="cash">ou <b>R$ 297 à vista</b></div>
+      <div class="vagas">Vagas preenchidas hoje<div class="vbar"><i></i></div></div>
+    </div>
+  </div>
+
+  <p>Entre aprender isso lá fora e lapidar aqui, foi mais de um ano. Curso em espanhol, viagem, três meses morando fora pra ver o jogo de dentro, dinheiro queimado com produto que não vendeu. Somando tudo, isso vale muito mais que 5 mil reais.</p>
+  <p>Mas eu não quero cem pessoas ricas aqui dentro. <b>Eu quero cem pessoas comuns aplicando e me mandando print.</b> Então o preço é baixo de propósito. Baixo o suficiente pra você entrar, e alto o suficiente pra você abrir.</p>
+  <p>E são só <span class="hl">100 vagas</span>. Não é firula de vendedor. Amostra e produto que eu consigo pela minha agência não é infinito, e eu prefiro distribuir bem pra cem do que mal pra mil.</p>
+</section>
+
+<!-- ===================== GARANTIA ===================== -->
+<section>
+  <div class="guarantee">
+    <svg class="seal2" viewBox="0 0 120 120" aria-label="Garantia de 7 dias">
+      <defs>
+        <linearGradient id="sg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#25F4EE"/><stop offset=".5" stop-color="#8b7bf0"/><stop offset="1" stop-color="#FE2C55"/></linearGradient>
+        <path id="sgc" d="M60,60 m-41,0 a41,41 0 1,1 82,0 a41,41 0 1,1 -82,0"/>
+      </defs>
+      <g class="sg-spin"><polygon id="sgpoly" fill="url(#sg)"/></g>
+      <circle cx="60" cy="60" r="50" fill="#07070b"/>
+      <circle cx="60" cy="60" r="47.5" fill="none" stroke="url(#sg)" stroke-width="1"/>
+      <circle cx="60" cy="60" r="34" fill="none" stroke="url(#sg)" stroke-width="1" stroke-dasharray="2 3"/>
+      <g class="sg-ring"><text font-size="7.4" font-weight="800" letter-spacing="1.6" fill="#fff"><textPath href="#sgc">GARANTIA DE 7 DIAS ✦ SEU DINHEIRO DE VOLTA ✦</textPath></text></g>
+      <text x="58.5" y="70" text-anchor="middle" font-size="34" font-weight="900" fill="#25F4EE">7</text>
+      <text x="61.5" y="70" text-anchor="middle" font-size="34" font-weight="900" fill="#FE2C55">7</text>
+      <text x="60" y="70" text-anchor="middle" font-size="34" font-weight="900" fill="#fff">7</text>
+      <text x="60" y="81" text-anchor="middle" font-size="8" font-weight="900" letter-spacing="2.4" fill="#fff">DIAS</text>
+    </svg>
+    <div>
+      <h3>Garantia de 7 dias</h3>
+      <p>Você tem 7 dias pra entrar, assistir, montar os seus primeiros vídeos e botar pra rodar. Se não for pra você, você pede e eu devolvo. Sem formulário chato, sem ligação de retenção, sem ter que explicar nada pra ninguém. E os vídeos que você já montou ficam com você.</p>
+    </div>
+  </div>
+  <p>Eu não vou te dizer que você tem 7 dias só porque é direito do consumidor. Eu vou te dizer o que esses 7 dias custam pra mim. A taxa da plataforma de pagamento não volta, o suporte que te atendeu já foi pago, e a sua vaga sai do lote de hoje e não volta pra ele. <b>Se você entrar e desistir, eu saio no prejuízo e você sai no zero. E eu tô assinando isso mesmo assim.</b></p>
+</section>
+
+<!-- ===================== DÚVIDAS ===================== -->
+<section>
+  <span class="tag">Dúvidas que eu sempre recebo</span>
+  <h2>Antes de você decidir</h2>
+  <details><summary>Preciso aparecer nos vídeos?</summary><p>Não. Quem aparece é um avatar feito com inteligência artificial. Não é o seu rosto, não é a sua voz e não é o seu nome.</p></details>
+  <details><summary>Funciona só pelo celular?</summary><p>Funciona. Dá pra fazer tudo pelo celular que você já tem, nos intervalos do seu dia.</p></details>
+  <details><summary>Preciso ter seguidores ou experiência?</summary><p>Não. Tem aluno que começou do zero absoluto, sem seguidor, sem experiência e sem nunca ter vendido nada na internet.</p></details>
+  <details><summary>Preciso investir em anúncio ou comprar estoque?</summary><p>Não. Você não compra estoque, não manda produto e não fala com cliente. E não precisa investir um real em anúncio, porque a plataforma entrega de graça o vídeo que prende a atenção.</p></details>
+  <details><summary>Preciso de CNPJ?</summary><p>Não precisa pra começar. Se você crescer, aí você abre um. E você não vende nada pirata, divulga produto de marca que quer ser divulgada.</p></details>
+  <details><summary>E se minha conta tomar ban?</summary><p>Conta cai por copiar vídeo dos outros e repostar, ou por postar como propaganda pura. Aqui você não copia nada. Você lê o padrão e monta um vídeo novo, seu, no formato que a plataforma entende como conteúdo.</p></details>
+  <details><summary>Como funciona o pagamento?</summary><p>Você preenche o formulário aqui embaixo e a sua vaga fica reservada no seu nome. A nossa equipe te chama no WhatsApp pra finalizar o pagamento, no Pix à vista por R$ 297 ou no cartão em 12x de R$ 29, e liberar o seu acesso.</p></details>
+</section>
+
+<!-- ===================== 3 CAMINHOS ===================== -->
+<section>
+  <span class="tag">A decisão é sua</span>
+  <h2>Agora você tem <span class="hl">três caminhos</span></h2>
+  <div class="paths">
+    <div class="path"><h3>1. Fechar essa página</h3><p>Voltar pra sua rotina normal. E daqui a seis meses, no mesmo grupo de WhatsApp, aquela pessoa que você jura que é menos capaz que você vai postar um print. E você vai lembrar que teve essa página aberta na sua frente.</p></div>
+    <div class="path"><h3>2. Fazer tudo sozinho</h3><p>Dá pra fazer. Só que esse caminho não é de graça, ele só não tem etiqueta de preço. Custa o curso em outra língua, o dinheiro dos produtos errados, os meses batendo cabeça com vídeo que a plataforma enterra. E custa a única coisa que você não recompra na vida, que é o seu tempo.</p></div>
+    <div class="path go"><h3>3. Entrar agora</h3><p>Com a estratégia e o meu método na mão, seguir o passo a passo e ligar a sua terceira renda ainda essa semana. Aquela que não cobra hora sua, que roda por fora, e que tem esse hábito estranho de ir passando as outras duas.</p></div>
+  </div>
+  <p>Da outra vez, quando não deu certo, a culpa não foi sua. Faltou estratégia. <b>Dessa vez você vai ter a estratégia.</b></p>
+</section>
+
+<!-- ===================== FORMULÁRIO ===================== -->
+<section id="form">
+  <div class="form-card">
+    <div id="form-area">
+      <h2>Reserve a sua vaga <span class="hl">agora</span></h2>
+      <p class="lead">Preencha os seus dados. A nossa equipe te chama no WhatsApp pra liberar o seu acesso.</p>
+      <form id="lead-form" novalidate>
+        <div class="field" data-f="nome"><label for="nome">Seu nome</label><input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como você se chama?" required><div class="msg">Digite o seu nome completo</div></div>
+        <div class="field" data-f="email"><label for="email">Seu melhor e-mail</label><input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="seuemail@exemplo.com" required><div class="msg">Digite um e-mail válido</div></div>
+        <div class="field" data-f="whatsapp"><label for="whatsapp">Seu WhatsApp com DDD</label><input id="whatsapp" name="whatsapp" type="tel" autocomplete="tel" inputmode="numeric" placeholder="(00) 00000-0000" required><div class="msg">Digite um WhatsApp válido com DDD</div></div>
+        <div class="field" data-f="pagamento"><label>Como prefere pagar?</label>
+          <div class="pay-opts">
+            <div><input type="radio" name="pagamento" id="pg-pix" value="pix" checked><label for="pg-pix">Pix à vista<small>R$ 297</small></label></div>
+            <div><input type="radio" name="pagamento" id="pg-cartao" value="cartao_12x"><label for="pg-cartao">Cartão<small>12x de R$ 29</small></label></div>
+          </div>
+        </div>
+        <label class="consent"><input type="checkbox" id="consent" checked required><span>Aceito receber contato pelo WhatsApp e e-mail sobre a minha vaga, conforme a <a href="#privacidade" data-legal>Política de privacidade</a>.</span></label>
+        <button type="submit" class="tk-btn" id="send"><span class="tk-in"><span class="tk-tx">Quero minha vaga</span><span class="tk-sm">12x de R$ 29 ou R$ 297 à vista</span></span></button>
+        <p class="form-error" id="form-error">Não conseguimos enviar agora. Confira a sua conexão e tente de novo.</p>
+        <p class="secure"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Seus dados estão protegidos e não são compartilhados</p>
+      </form>
+    </div>
+
+    <div class="success" id="success" role="status" aria-live="polite">
+      <div class="ok"><svg width="42" height="42" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h2>Parabéns, <span class="hl" id="s-nome">a sua vaga</span> está reservada!</h2>
+      <p>Em breve a nossa equipe vai entrar em contato pelo WhatsApp pra finalizar o seu pagamento e liberar o seu acesso.</p>
+      <div class="steps-mini">
+        <div><b>1</b><span>Fique de olho no WhatsApp <strong id="s-wa"></strong>. A gente te chama por lá.</span></div>
+        <div><b>2</b><span>Você finaliza o pagamento direto com a nossa equipe, no Pix ou no cartão.</span></div>
+        <div><b>3</b><span>O seu acesso é liberado e você já começa a montar os seus primeiros vídeos.</span></div>
+      </div>
+      <p id="wa-wrap" style="display:none;margin-top:18px"><a class="wa" id="wa-link" href="#" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.1.1.7-.1 1.4z"/></svg>Falar no WhatsApp agora</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FECHAMENTO ===================== -->
+<section>
+  <p class="ps"><b>E você não precisa confiar só em mim.</b> Mais de 700 pessoas já passaram pela minha primeira imersão. Não é promessa. É o que eu faço todo dia, e a gente vai te ajudar de verdade.</p>
+  <p class="ps">Eu não tenho diploma nenhum. Eu tenho porta de loja. E foi ela que me trouxe até aqui. Bora fazer dar certo.</p>
+  <p class="sign">Bruna Morais</p>
+  <div class="cta-wrap"><a class="tk-btn js-goform" href="#form"><span class="tk-in"><span class="tk-tx">Quero minha vaga</span><span class="tk-sm">Restam poucas das 100 vagas de hoje</span></span></a></div>
+</section>
+
+<footer class="legal-footer">
+  <nav aria-label="Informações legais"><a href="#termos" data-legal>Termos de uso</a><a href="#privacidade" data-legal>Política de privacidade</a><a href="#cookies" data-legal>Política de cookies</a><a href="#direitos" data-legal>Direitos LGPD e contato</a></nav>
+  <p>© 2026 Bruna Morais · Todos os direitos reservados.</p>
+  <p>Esta página é independente e não é afiliada ao Facebook, à Meta ou ao TikTok.</p>
+  <p>Resultados variam de pessoa para pessoa e dependem da aplicação de cada um.</p>
+</footer>
+
+<dialog id="legal-dialog" aria-labelledby="legal-title"><button class="legal-close" aria-label="Fechar" type="button">×</button><div id="legal-content"></div></dialog>
+<template id="termos"><h2 id="legal-title">Termos de uso</h2><p>Atualização: 26/11/2026.</p><p>Responsável pela página: [RAZÃO SOCIAL OU NOME], [CPF/CNPJ], [ENDEREÇO]. Contato: [E-MAIL DE CONTATO].</p><p>Esta página apresenta uma oferta de produto digital. O conteúdo não constitui garantia de resultados individuais, que dependem da aplicação de cada pessoa.</p><p>O envio do formulário reserva uma vaga e autoriza o contato da equipe para finalizar a contratação. A contratação só se conclui com o pagamento, e preço, condições, fornecedor, atendimento e regras de cancelamento são informados antes da conclusão.</p><p>É vedado utilizar a página para atividades ilícitas, violar direitos de terceiros ou reproduzir materiais protegidos sem autorização, ressalvadas as hipóteses legais.</p><p>Nenhuma disposição limita direitos assegurados pelo Código de Defesa do Consumidor, inclusive o direito de arrependimento em 7 dias.</p></template>
+<template id="privacidade"><h2 id="legal-title">Política de privacidade</h2><p>Atualização: 26/11/2026.</p><h3>Controlador e contato</h3><p>[RAZÃO SOCIAL OU NOME], [CPF/CNPJ], [ENDEREÇO]. Canal de privacidade: [E-MAIL LGPD]. Encarregado, quando aplicável: [NOME E CONTATO].</p><h3>Dados e finalidades</h3><p>Pelo formulário desta página coletamos nome, e-mail, número de WhatsApp e a forma de pagamento preferida, para reservar a sua vaga, entrar em contato, finalizar a contratação e liberar o acesso ao produto. Também podem ser registrados dados de navegação (como endereço IP, navegador, dispositivo e parâmetros de campanha) pela hospedagem, pelo banco de dados e pelo pixel de mensuração.</p><p>As bases legais correspondem a cada finalidade: procedimentos preliminares relacionados a contrato a pedido do titular para o contato e a contratação, consentimento para comunicações e rastreamento opcional quando aplicável, e legítimo interesse para segurança e funcionamento quando cabível e devidamente avaliado.</p><h3>Compartilhamento e transferências</h3><p>Os dados do formulário são armazenados no Supabase. A página utiliza o pixel da Meta. Hospedagem: [PROVEDOR]. Outros destinatários, países e mecanismos de transferência internacional, se aplicáveis: [PREENCHER APÓS AUDITORIA].</p><h3>Retenção e segurança</h3><p>Os dados são conservados pelo período necessário à finalidade e às obrigações legais aplicáveis. Prazos efetivos: [INFORMAR POR CATEGORIA]. Medidas de segurança adotadas: [INFORMAR MEDIDAS REAIS].</p><h3>Direitos e alterações</h3><p>Os titulares podem exercer os direitos previstos na LGPD pelo canal indicado acima. Alterações relevantes nesta política serão informadas de forma adequada.</p></template>
+<template id="cookies"><h2 id="legal-title">Política de cookies</h2><p>Cookies e tecnologias semelhantes podem ser usados para funcionamento, segurança, preferências, métricas e publicidade, conforme a configuração efetiva dos serviços.</p><p>Esta página carrega o pixel da Meta para mensuração de campanhas. Inventário: [NOME, FORNECEDOR, FINALIDADE, BASE LEGAL E DURAÇÃO DE CADA COOKIE].</p><p>Cookies opcionais que dependam de consentimento devem permanecer desativados até uma escolha afirmativa, com rejeição e revogação igualmente acessíveis. O navegador também permite excluir ou bloquear cookies, o que pode afetar funcionalidades. Canal de solicitação: [E-MAIL LGPD].</p></template>
+<template id="direitos"><h2 id="legal-title">Direitos LGPD e contato</h2><p>Canal gratuito para solicitações: [E-MAIL LGPD]. Responsável: [NOME OU RAZÃO SOCIAL].</p><p>Você pode solicitar confirmação do tratamento, acesso, correção, anonimização, bloqueio ou eliminação de dados indevidos, portabilidade quando aplicável, informações sobre compartilhamento e consequências da negativa de consentimento, revogação do consentimento, eliminação de dados tratados com consentimento nas hipóteses legais, oposição ao tratamento irregular e revisão de decisões exclusivamente automatizadas quando aplicável.</p><p>Também é possível peticionar perante a ANPD e órgãos de defesa do consumidor. Consulte <a href="https://www.gov.br/anpd/pt-br" target="_blank" rel="noopener noreferrer">o portal oficial da ANPD</a>.</p></template>
+
+</main>
+
+<script>
+(function(){
+  /* roseta do selo */
+  var pts=[],N=28;
+  for(var i=0;i<N*2;i++){var r=i%2?54:59,a=Math.PI*i/N-Math.PI/2;pts.push((60+r*Math.cos(a)).toFixed(2)+','+(60+r*Math.sin(a)).toFixed(2));}
+  document.getElementById('sgpoly').setAttribute('points',pts.join(' '));
+
+  /* botões rolam até o formulário */
+  document.querySelectorAll('.js-goform').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      document.getElementById('form').scrollIntoView({behavior:'smooth'});
+      setTimeout(function(){ document.getElementById('nome').focus({preventScroll:true}); },700);
+    });
+  });
+
+  /* máscara do WhatsApp */
+  var wa=document.getElementById('whatsapp');
+  wa.addEventListener('input',function(){
+    var d=wa.value.replace(/\D/g,'').slice(0,11), o='';
+    if(d.length>0) o='('+d.slice(0,2);
+    if(d.length>=3) o+=') '+d.slice(2, d.length>10?7:6);
+    if(d.length>=7) o+='-'+d.slice(d.length>10?7:6);
+    wa.value=o;
+  });
+
+  /* UTMs e origem */
+  var qs=new URLSearchParams(location.search);
+  function utm(k){ return qs.get(k)||null; }
+
+  /* validação */
+  var form=document.getElementById('lead-form');
+  function setErr(name,bad){ form.querySelector('[data-f="'+name+'"]').classList.toggle('err',bad); return !bad; }
+  function validate(){
+    var nome=form.nome.value.trim(), email=form.email.value.trim(), tel=wa.value.replace(/\D/g,'');
+    var ok=true;
+    ok=setErr('nome', nome.length<3 || nome.split(/\s+/).length<1) && ok;
+    ok=setErr('email', !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) && ok;
+    ok=setErr('whatsapp', !(tel.length===10||tel.length===11)) && ok;
+    return ok;
+  }
+  ['nome','email','whatsapp'].forEach(function(n){
+    form[n].addEventListener('blur',function(){ if(form[n].value) validate(); });
+    form[n].addEventListener('input',function(){ form.querySelector('[data-f="'+n+'"]').classList.remove('err'); });
+  });
+
+  async function save(lead){
+    var cfg=window.TSL||{};
+    if(!cfg.SUPABASE_URL || !cfg.SUPABASE_KEY){
+      /* modo demonstração: guarda no navegador e simula o envio */
+      try{ var all=JSON.parse(localStorage.getItem('tslLeads')||'[]'); all.push(lead); localStorage.setItem('tslLeads',JSON.stringify(all)); }catch(e){}
+      await new Promise(function(r){ setTimeout(r,900); });
+      return;
+    }
+    var res=await fetch(cfg.SUPABASE_URL.replace(/\/$/,'')+'/rest/v1/'+cfg.SUPABASE_TABLE,{
+      method:'POST',
+      headers:{'apikey':cfg.SUPABASE_KEY,'Authorization':'Bearer '+cfg.SUPABASE_KEY,'Content-Type':'application/json','Prefer':'return=minimal'},
+      body:JSON.stringify(lead)
+    });
+    if(!res.ok) throw new Error('Supabase '+res.status);
+  }
+
+  form.addEventListener('submit',async function(e){
+    e.preventDefault();
+    document.getElementById('form-error').style.display='none';
+    if(!validate()){ var f=form.querySelector('.field.err input'); if(f) f.focus(); return; }
+    if(!document.getElementById('consent').checked){ document.getElementById('consent').focus(); return; }
+    var btn=document.getElementById('send'); btn.disabled=true;
+    btn.querySelector('.tk-tx').textContent='Reservando...';
+    var tel=wa.value.replace(/\D/g,'');
+    var lead={
+      nome:form.nome.value.trim(),
+      email:form.email.value.trim().toLowerCase(),
+      whatsapp:'55'+tel,
+      pagamento:form.pagamento.value,
+      utm_source:utm('utm_source'), utm_medium:utm('utm_medium'), utm_campaign:utm('utm_campaign'),
+      utm_content:utm('utm_content'), utm_term:utm('utm_term'),
+      pagina:location.href.split('?')[0],
+      criado_em:new Date().toISOString()
+    };
+    try{
+      await save(lead);
+      if(window.fbq) fbq('track','Lead',{content_name:'TSL Terceira Renda',value:297,currency:'BRL'});
+      document.getElementById('s-nome').textContent=lead.nome.split(/\s+/)[0]+', a sua vaga';
+      document.getElementById('s-wa').textContent=wa.value;
+      var num=(window.TSL&&TSL.WHATSAPP_SUPORTE||'').replace(/\D/g,'');
+      if(num){
+        var txt='Oi! Acabei de reservar a minha vaga na Terceira Renda. Meu nome é '+lead.nome+' e quero pagar no '+(lead.pagamento==='pix'?'Pix à vista':'cartão em 12x')+'.';
+        document.getElementById('wa-link').href='https://wa.me/'+num+'?text='+encodeURIComponent(txt);
+        document.getElementById('wa-wrap').style.display='block';
+      }
+      document.getElementById('form-area').style.display='none';
+      document.getElementById('success').style.display='block';
+      document.getElementById('form').scrollIntoView({behavior:'smooth'});
+    }catch(err){
+      console.error('Erro ao enviar o cadastro:',err);
+      document.getElementById('form-error').style.display='block';
+      btn.disabled=false; btn.querySelector('.tk-tx').textContent='Quero minha vaga';
+    }
+  });
+
+  /* textos legais */
+  var d=document.getElementById('legal-dialog'), c=document.getElementById('legal-content');
+  document.querySelectorAll('[data-legal]').forEach(function(a){
+    a.addEventListener('click',function(e){ e.preventDefault(); c.replaceChildren(document.getElementById(a.hash.slice(1)).content.cloneNode(true)); d.showModal(); });
+  });
+  d.querySelector('button').onclick=function(){ d.close(); };
+  d.addEventListener('click',function(e){ if(e.target===d) d.close(); });
+})();
+</script>
+</body>
+</html>
